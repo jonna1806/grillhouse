@@ -1,0 +1,226 @@
+@charset "UTF-8";
+/*COLORES*/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h5 {
+  font-family: "Pacifico";
+  font-size: 120px;
+  color: #F9B303;
+}
+
+p {
+  font-family: "Montserrat";
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 2;
+  color: #051026;
+}
+
+a {
+  font-family: "Montserrat";
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 2;
+}
+
+img {
+  vertical-align: top;
+}
+
+header {
+  background-color: #051026;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+header a img {
+  height: 100px;
+}
+header ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+header ul li {
+  font-family: "Montserrat";
+  margin: 15px;
+  list-style: none;
+  text-decoration: none;
+}
+header ul li a {
+  list-style: none;
+  text-decoration: none;
+  color: #EFEFEF;
+  font-weight: 700;
+  transition: all 0.5s;
+}
+header ul li a:hover {
+  color: #F9B303;
+}
+header .icons {
+  display: flex;
+  align-items: center;
+}
+header .icons a {
+  color: #EFEFEF;
+  margin: 20px;
+  transition: all 0.5s;
+}
+header .icons a:hover {
+  transform: translateY(-10px);
+  color: #F9B303;
+}
+header .icons #shop {
+  border: solid 4px #CC1800;
+  padding: 20px;
+  margin: 0;
+  transition: all 0.5s;
+}
+header .icons #shop:hover {
+  background: #CC1800;
+  color: #EFEFEF;
+}
+
+.welcome {
+  background-image: url("../img/mainGrillhouse.jpeg");
+  background-position: center;
+  width: 100%;
+  height: auto;
+  filter: brightness(0.4);
+}
+.welcome .welcome--título {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.welcome .welcome--título p {
+  font-size: 40px;
+  color: #EFEFEF;
+}
+.welcome .welcome--título h1 {
+  font-size: 120px;
+  color: #F9B303;
+}
+
+.container .presentation {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.container .presentation .presentation--main {
+  width: 50%;
+  height: auto;
+  overflow: hidden;
+}
+.container .presentation .presentation--main video {
+  height: 700px;
+  vertical-align: top;
+}
+.container .presentation .presentation--texts {
+  width: 50%;
+  padding-top: 70px;
+}
+.container .presentation .presentation--texts h2 {
+  padding-left: 40px;
+}
+.container .presentation .presentation--texts p {
+  width: 80%;
+  padding-left: 40px;
+  padding-bottom: 40px;
+}
+.container .presentation .presentation--texts a {
+  padding: 20px;
+  margin-left: 40px;
+  font-family: "Montserrat";
+  font-weight: 700;
+  border: solid 4px #CC1800;
+  text-decoration: none;
+  transition: all 0.5s;
+  color: #CC1800;
+}
+.container .presentation .presentation--texts a:hover {
+  background: #CC1800;
+  color: #EFEFEF;
+}
+.container .options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.container .options .options--products {
+  background-color: #EFEFEF;
+  max-width: 20%;
+  transition: all 0.5s;
+}
+.container .options .options--products:hover {
+  transform: scale(1.1);
+  background-color: #fff;
+}
+.container .options .options--products img {
+  max-width: 100%;
+}
+.container .options .options--products .texts {
+  margin: 20px 20px;
+  display: flex;
+  flex-direction: column;
+}
+.container .options .options--products .texts .name {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.container .options .options--products .texts .name strong {
+  padding-bottom: 15px;
+  border-bottom: solid 1px #CC1800;
+}
+.container .options .options--products .texts .descript {
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #051026;
+}
+.container .options .options--products .texts a {
+  color: #051026;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+  border: solid 4px #F9B303;
+  padding: 10px 50px;
+  transition: all 0.5s;
+}
+.container .options .options--products .texts a:hover {
+  background-color: #F9B303;
+}
+
+footer {
+  background-color: #051026;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+footer p {
+  margin: 20px;
+  color: #EFEFEF;
+}
+footer div {
+  padding-top: 20px;
+  border-top: solid 1px #EFEFEF;
+}
+footer div a {
+  margin: 20px;
+  color: #EFEFEF;
+  transition: all 0.5s;
+}
+footer div a:hover {
+  color: #F9B303;
+}

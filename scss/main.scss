@@ -1,0 +1,250 @@
+@import 'colores';
+@import 'generales';
+
+///HEADER
+
+header{
+    background-color: $color-azul;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+
+    a{
+        img{
+            height: 100px;
+        }
+    }
+
+    ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+        li{
+            font-family: 'Montserrat';
+            margin: 15px;
+            list-style: none;
+            text-decoration: none;
+
+            a{
+                list-style: none;
+                text-decoration: none;
+                color: $color-blanco;
+                font-weight: 700;
+                transition: all 0.5s;
+
+                &:hover{                    
+                    color: $color-amarillo;
+                }
+            }
+        }
+    }
+
+    .icons{        
+        
+        display: flex;
+        align-items: center;
+
+        a{
+            color: $color-blanco;
+            margin: 20px;
+            transition: all 0.5s;
+
+            &:hover{
+                transform: translateY(-10px);
+                color: $color-amarillo;
+            }
+        }
+
+        #shop{
+            border: solid 4px $color-rojo;
+            padding: 20px;
+            margin: 0;            
+            transition: all 0.5s;
+
+            &:hover{
+                background: $color-rojo;            
+                color: $color-blanco;
+            }
+        }
+    }
+}
+
+/// WELCOME
+
+.welcome{
+        background-image: url('../img/mainGrillhouse.jpeg');
+        background-position: center;
+        width: 100%;
+        height: auto;
+        filter: brightness(0.4);
+
+    .welcome--título{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+
+        p{
+            font-size: 40px;
+            color: $color-blanco;
+        }
+
+        h1{
+            font-size: 120px;
+            color: $color-amarillo;
+        }
+    }
+}
+
+/// PRODUCTOS
+
+.container{    
+    .presentation{
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .presentation--main{
+            width: 50%;
+            height: auto;
+            overflow: hidden;
+
+            video{
+                height: 700px;
+                vertical-align: top;         
+            } 
+            
+        }
+
+        .presentation--texts{
+            width: 50%;
+            padding-top: 70px;
+
+            h2{                
+                padding-left: 40px;
+            }
+            
+            p{
+                width: 80%;
+                padding-left: 40px;
+                padding-bottom: 40px;
+            }
+
+            a{
+                padding: 20px;
+                margin-left: 40px;
+                font-family: 'Montserrat'; 
+                font-weight: 700;                       
+                border: solid 4px $color-rojo;                
+                text-decoration: none;
+                transition: all 0.5s;
+                color: $color-rojo;
+
+                &:hover{
+                    background: $color-rojo;            
+                    color: $color-blanco;
+                }
+            }
+            
+        }
+    }
+
+    .options{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;        
+
+        .options--products{
+            background-color: $color-blanco;
+            max-width: 20%;
+            transition: all 0.5s;
+
+            &:hover{
+                transform: scale(1.1);
+                background-color: #fff;
+            }
+
+            img{
+                max-width: 100%;
+            }
+
+            .texts{ 
+                margin: 20px 20px;
+                display: flex;
+                flex-direction: column;
+
+                .name{
+                    margin-bottom: 20px ;
+                    text-align: center;
+                    
+                    strong{
+                        padding-bottom: 15px;
+                        border-bottom: solid 1px $color-rojo;
+                    }
+                } 
+    
+                .descript{
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                    text-align: center;
+                    color: $color-azul;
+                }
+
+                a{
+                    color: $color-azul;
+                    font-weight: 700;
+                    text-decoration: none;
+                    text-align: center;
+                    justify-content: center;
+                    border: solid 4px $color-amarillo;
+                    padding: 10px 50px;
+                    transition: all 0.5s;
+
+                    &:hover{
+                        background-color: $color-amarillo;
+                    }
+                }
+            }            
+        }        
+    }
+}
+
+footer{
+    background-color: $color-azul;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    p{
+        margin: 20px;       
+        color: $color-blanco;      
+    }
+
+    div{
+        padding-top: 20px;
+        border-top: solid 1px $color-blanco;
+
+        a{        
+            margin: 20px;
+            color: $color-blanco;        
+              
+            transition: all 0.5s;
+    
+            &:hover{
+                color: $color-amarillo;
+            }
+        }
+
+    }
+
+    
+    
+}
