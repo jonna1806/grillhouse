@@ -128,7 +128,7 @@ console.log(combo2);
 console.log(combo3);
 
 let nombre = 0
-
+/*
 function pedirNombre() {
     nombre = prompt ("Hola, bienvenido a Grill House, nos gustaría saber tu nombre");
 }
@@ -140,6 +140,7 @@ function solicitarPedido() {
 }
 
 solicitarPedido();
+*/
 
 function quieroBurger () {
     var nuevoDiv = document.createElement("div");
@@ -162,6 +163,13 @@ if(pedido == 1) {
     alert("Nuestras malteadas")
 } else{
     alert("No te gustó nada :C")
+}
+
+//Eventos
+
+let boton = document.getElementById("btnPrueba")
+boton.onclick = () => {
+    alert("funciona el boton")
 }
 
 
