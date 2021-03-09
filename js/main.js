@@ -38,7 +38,7 @@ let botones = document.getElementsByClassName("btn-buy");
 for (let boton of botones){
     boton.onclick = () => {
     cantidadPedido = prompt(`No te arrepentirás \n¿qué cantidad desesas de este producto?`)
-    
+     
     function quieroBurger () {
         var nuevoDiv = document.createElement("div");
         var estoQuiero = document.createTextNode(`Quiero ${cantidadPedido} de hamburguesas`);
@@ -50,8 +50,15 @@ for (let boton of botones){
     }
 }
 
+//Almacenar datos en el localStorage
+const productoPedido = localStorage.setItem("productosPedidos", JSON.parse(cantidadPedido));
 
 
+const guardarProductos = (a, b) => {localStorage.setItem(a, b)};
+
+for (const productos of data){
+    guardarProductos("listaProductos", JSON.stringify(data));
+}
 
 
 
