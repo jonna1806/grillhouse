@@ -33,7 +33,7 @@ listaBurgers.push(new Burgers(data[4]));
 
 //Eventos de botón de compra
 var cantidadPedido = 0;
-
+/*
 let botones = document.getElementsByClassName("btn-buy");
 for (let boton of botones){
     boton.onclick = () => {
@@ -49,6 +49,14 @@ for (let boton of botones){
     quieroBurger();
     }
 }
+*/
+
+//Ensayando con JQUERY
+$(".btn-buy").click(() => {
+    cantidadPedido = prompt(`No te arrepentirás \n¿qué cantidad desesas de este producto?`);
+    $(".btn-buy").prepend(`<p>Quiero ${cantidadPedido}</p>`)
+})
+ 
 
 //Almacenar datos en el localStorage
 const productoPedido = localStorage.setItem("productosPedidos", JSON.parse(cantidadPedido));
@@ -60,6 +68,16 @@ for (const productos of data){
     guardarProductos("listaProductos", JSON.stringify(data));
 }
 
+
+//__________________________
+
+$( document) .ready(function(){
+    console.log('El DOM está listo');
+})
+
+window.addEventListener('load', function(){
+    console.log('Ventana cargada');
+})
 
 
 
