@@ -2,19 +2,6 @@
 const carroCompra = [];
 const data = productosData;
 
-
-/*
-function quieroBurger () {
-    let nuevoDiv = document.createElement("div");
-    let estoQuiero = document.createTextNode("ESTO ES LO QUE QUIERO");
-    nuevoDiv.appendChild(estoQuiero);
-
-    let actualDiv = document.getElementById("burgers");
-    document.body.insertBefore(nuevoDiv, actualDiv);
-}
-quieroBurger();
-*/
-
 //Declaración de las clases
 class Burgers{
     constructor(data){
@@ -33,29 +20,27 @@ listaBurgers.push(new Burgers(data[4]));
 
 //Eventos de botón de compra
 var cantidadPedido = 0;
-/*
-let botones = document.getElementsByClassName("btn-buy");
-for (let boton of botones){
-    boton.onclick = () => {
-    cantidadPedido = prompt(`No te arrepentirás \n¿qué cantidad desesas de este producto?`)
-     
-    function quieroBurger () {
-        var nuevoDiv = document.createElement("div");
-        var estoQuiero = document.createTextNode(`Quiero ${cantidadPedido} de hamburguesas`);
-        nuevoDiv.appendChild(estoQuiero);
-        var actualDiv = document.getElementById("burgers");
-        document.body.insertBefore(nuevoDiv, actualDiv);
-    }
-    quieroBurger();
-    }
-}
-*/
 
 //Ensayando con JQUERY
+/*
 $(".btn-buy").click(() => {
     cantidadPedido = prompt(`No te arrepentirás \n¿qué cantidad desesas de este producto?`);
     $(".btn-buy").prepend(`<p>Quiero ${cantidadPedido}</p>`)
 })
+*/
+
+//Ensayando con Efectos y animaciones
+$("#burgerMissPiggy").click( () => { 
+    $("#burgerMissPiggy").fadeOut(2000, () => {
+        $("#burgerMissPiggy").fadeIn("2000");
+    });   
+});
+
+//Aparece y desaparece los nombres de los productos
+$(".btn-buy").click(() => {
+    $(".name").toggle("fast");
+})
+
  
 
 //Almacenar datos en el localStorage
