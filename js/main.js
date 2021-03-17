@@ -2,21 +2,26 @@
 const carroCompra = [];
 const data = productosData;
 
-//Declaración de las clases
-class Burgers{
-    constructor(data){
-        this.name        = data.name;
-        this.descripcion = data.descripcion;
-        this.precio      = data.precio;
-    }
+for (let productos of data){
+    generarProductos(productos)
 }
 
-let listaBurgers = [];
-listaBurgers.push(new Burgers(data[0]));
-listaBurgers.push(new Burgers(data[1]));
-listaBurgers.push(new Burgers(data[2]));
-listaBurgers.push(new Burgers(data[3]));
-listaBurgers.push(new Burgers(data[4]));
+function generarProductos(productos){
+    let padres = document.getElementsByClassName("options")
+    for (let padre of padres) {        
+        let contenedor       = document.createElement("div")
+        contenedor.innerHTML = ` <div class="options--products">
+                                <img src="${productos.img} " alt="${productos.img}">
+                                <div class="texts">
+                                    <p class="name"><strong>${productos.name}</strong> </p>
+                                    <p class="descript">${productos.descripcion} </p>
+                                    <a class="btn-buy" href="#"> ${productos.precio} </a>
+                                </div>
+                            </div> `
+        padre.appendChild(contenedor);
+    }
+    
+}
 
 //Eventos de botón de compra
 var cantidadPedido = 0;
@@ -45,7 +50,6 @@ $(".btn-buy").click(() => {
 
 //Almacenar datos en el localStorage
 const productoPedido = localStorage.setItem("productosPedidos", JSON.parse(cantidadPedido));
-
 
 const guardarProductos = (a, b) => {localStorage.setItem(a, b)};
 

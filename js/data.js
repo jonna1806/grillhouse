@@ -3,7 +3,7 @@ const productosData = [
     {   
         name: `Miss Piggy`,
         descripcion: `Pan artesanal, vegetales frescos y 250 gr. de cerdo con tocineta y salsa de la casa`,
-        img: '..img/burger_miss_piggy.jpeg',
+        img: '../img/burger_miss_piggy.jpeg',
         precio: 27000
     },
     {
@@ -34,7 +34,7 @@ const productosData = [
     {
         name: `Alemán`,
         descripcion: `Pan artesanal, salchicha alemana, queso cheddar, pesto y salsa tártara`,
-        img: '../img/hotdog_aleman',
+        img: '../img/hotdog_aleman.jpeg', 
         precio: 25000
     },
     {
@@ -121,7 +121,7 @@ const productosData = [
         name: `Pacono`,
         descripcion: `Papas en fosforitos con queso crema y chicharrón, justo para calmar el antojo`,
         img: '../img/fries_pacono.jpeg',
-        precio: 17.000
+        precio: 17000
     },
 //Malteadas
     {
