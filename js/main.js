@@ -68,6 +68,39 @@ window.addEventListener('load', function(){
     console.log('Ventana cargada');
 })
 
+// Probando AJAX con Jquery
+const URLGET = "https://jsonplaceholder.typicode.com/posts"
+
+$("#pruebaAjax").prepend('<button id="btnPrueba">Desplegar información</button>')
+$("#pruebaAjax").prepend('<button id="btnEnviar">Enviar Información</button>')
+
+$("#btnPrueba").click(() => {
+    $.get(URLGET, function (respuesta, estado){
+        if(estado === "success"){
+            let misDatos = respuesta;
+            for (const dato of misDatos){
+                $("#pruebaAjax").prepend(`<div>
+                                            <p><strong>${dato.title}</strong><p>
+                                            <p> ${dato.body}</p>                                        
+                                          </div>`);
+                                          
+            }
+        }
+    })
+    
+})
+
+$("#btnEnviar").click(() => {
+    $.post(URLGET, data[0].name, (datos, estado) => {
+        if(estado === "success"){
+            alert ("envio exitoso");
+        }
+    })
+})
+
+
+
+
 
 
 
