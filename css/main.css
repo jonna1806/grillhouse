@@ -31,6 +31,7 @@ img {
 }
 
 header {
+  width: 100%;
   background-color: #051026;
   display: flex;
   flex-direction: row;
@@ -77,14 +78,14 @@ header .icons a:hover {
   color: #F9B303;
 }
 header .icons #shop {
-  border: solid 4px #CC1800;
-  padding: 20px;
-  margin: 0;
+  color: #F9B303;
   transition: all 0.5s;
 }
 header .icons #shop:hover {
-  background: #CC1800;
   color: #EFEFEF;
+}
+header #exampleModalLongTitle {
+  font-size: 20px;
 }
 
 .welcome {
@@ -110,93 +111,57 @@ header .icons #shop:hover {
   color: #F9B303;
 }
 
-.container .presentation {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.container .presentation .presentation--main {
-  width: 50%;
-  height: auto;
-  overflow: hidden;
-}
-.container .presentation .presentation--main video {
-  height: 700px;
-  vertical-align: top;
-}
-.container .presentation .presentation--texts {
-  width: 50%;
-  padding-top: 70px;
-}
-.container .presentation .presentation--texts h2 {
-  padding-left: 40px;
-}
-.container .presentation .presentation--texts p {
-  width: 80%;
-  padding-left: 40px;
-  padding-bottom: 40px;
-}
-.container .presentation .presentation--texts a {
-  padding: 20px;
-  margin-left: 40px;
-  font-family: "Montserrat";
-  font-weight: 700;
-  border: solid 4px #CC1800;
-  text-decoration: none;
-  transition: all 0.5s;
-  color: #CC1800;
-}
-.container .presentation .presentation--texts a:hover {
-  background: #CC1800;
-  color: #EFEFEF;
-}
 .container .options {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.container .options .options--products {
+.container .options div {
+  border-radius: 10px;
+  padding: 10px;
+  width: 20%;
+}
+.container .options div .options--products {
   background-color: #EFEFEF;
-  max-width: 20%;
-  transition: all 0.5s;
+  width: 100%;
 }
-.container .options .options--products:hover {
-  transform: scale(1.1);
-  background-color: #fff;
+.container .options div .options--products img {
+  border-radius: 50%;
+  width: 100%;
 }
-.container .options .options--products img {
-  max-width: 100%;
-}
-.container .options .options--products .texts {
-  margin: 20px 20px;
+.container .options div .options--products .texts {
+  width: 100%;
+  margin: 20px 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
-.container .options .options--products .texts .name {
+.container .options div .options--products .texts .name {
   margin-bottom: 20px;
   text-align: center;
 }
-.container .options .options--products .texts .name strong {
+.container .options div .options--products .texts .name strong {
   padding-bottom: 15px;
   border-bottom: solid 1px #CC1800;
 }
-.container .options .options--products .texts .descript {
+.container .options div .options--products .texts .descript {
   font-size: 14px;
   margin-bottom: 10px;
   text-align: center;
   color: #051026;
 }
-.container .options .options--products .texts a {
+.container .options div .options--products .texts button {
+  border-radius: 5px;
   color: #051026;
   font-weight: 700;
   text-decoration: none;
   text-align: center;
   justify-content: center;
-  border: solid 4px #F9B303;
+  border: solid 1px #F9B303;
   padding: 10px 50px;
   transition: all 0.5s;
 }
-.container .options .options--products .texts a:hover {
+.container .options div .options--products .texts button:hover {
   background-color: #F9B303;
 }
 

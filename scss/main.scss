@@ -4,6 +4,7 @@
 ///HEADER
 
 header{
+    width: 100%;
     background-color: $color-azul;
     display: flex;
     flex-direction: row;
@@ -59,17 +60,18 @@ header{
             }
         }
 
-        #shop{
-            border: solid 4px $color-rojo;
-            padding: 20px;
-            margin: 0;            
+        #shop{        
+            color: $color-amarillo;
             transition: all 0.5s;
 
             &:hover{
-                background: $color-rojo;            
                 color: $color-blanco;
-            }
+            }           
         }
+    }
+
+    #exampleModalLongTitle{
+        font-size: 20px;
     }
 }
 
@@ -103,116 +105,72 @@ header{
 
 /// PRODUCTOS
 
-.container{    
-    .presentation{
+.container{  
 
+    .options{     
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        
+        div{
+            border-radius: 10px;
+            padding: 10px;
+            width: 20%;
 
-        .presentation--main{
-            width: 50%;
-            height: auto;
-            overflow: hidden;
-
-            video{
-                height: 700px;
-                vertical-align: top;         
-            } 
-            
-        }
-
-        .presentation--texts{
-            width: 50%;
-            padding-top: 70px;
-
-            h2{                
-                padding-left: 40px;
-            }
-            
-            p{
-                width: 80%;
-                padding-left: 40px;
-                padding-bottom: 40px;
-            }
-
-            a{
-                padding: 20px;
-                margin-left: 40px;
-                font-family: 'Montserrat'; 
-                font-weight: 700;                       
-                border: solid 4px $color-rojo;                
-                text-decoration: none;
-                transition: all 0.5s;
-                color: $color-rojo;
-
-                &:hover{
-                    background: $color-rojo;            
-                    color: $color-blanco;
-                }
-            }
-            
-        }
-    }
-
-    .options{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;        
-
-        .options--products{
-            background-color: $color-blanco;
-            max-width: 20%;
-            transition: all 0.5s;
-
-            &:hover{
-                transform: scale(1.1);
-                background-color: #fff;
-            }
-
-            img{
-                max-width: 100%;
-            }
-
-            .texts{ 
-                margin: 20px 20px;
-                display: flex;
-                flex-direction: column;
-
-                .name{
-                    margin-bottom: 20px ;
-                    text-align: center;
-                    
-                    strong{
-                        padding-bottom: 15px;
-                        border-bottom: solid 1px $color-rojo;
-                    }
-                } 
+            .options--products{
+                background-color: $color-blanco;
+                width: 100%;
     
-                .descript{
-                    font-size: 14px;
-                    margin-bottom: 10px;
-                    text-align: center;
-                    color: $color-azul;
+                img{
+                    border-radius: 50%;
+                   width: 100%;
                 }
-
-                a{
-                    color: $color-azul;
-                    font-weight: 700;
-                    text-decoration: none;
-                    text-align: center;
-                    justify-content: center;
-                    border: solid 4px $color-amarillo;
-                    padding: 10px 50px;
-                    transition: all 0.5s;
-
-                    &:hover{
-                        background-color: $color-amarillo;
+    
+                .texts{
+                    width: 100%;
+                    margin: 20px 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+    
+                    .name{
+                        margin-bottom: 20px ;
+                        text-align: center;
+                        
+                        strong{
+                            padding-bottom: 15px;
+                            border-bottom: solid 1px $color-rojo;
+                        }
+                    } 
+        
+                    .descript{
+                        font-size: 14px;
+                        margin-bottom: 10px;
+                        text-align: center;
+                        color: $color-azul;
                     }
-                }
-            }            
-        }        
-    }
+    
+                    button{
+                        border-radius: 5px;
+                        color: $color-azul;
+                        font-weight: 700;
+                        text-decoration: none;
+                        text-align: center;
+                        justify-content: center;
+                        border: solid 1px $color-amarillo;
+                        padding: 10px 50px;
+                        transition: all 0.5s;
+    
+                        &:hover{
+                            background-color: $color-amarillo;
+                        }
+                    }
+                }            
+            }        
+        }
+        }
+
+        
 }
 
 footer{

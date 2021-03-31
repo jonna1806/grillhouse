@@ -1,26 +1,85 @@
 
-const carroCompra = [];
+const buyCar = [];
 const data = productosData;
+let totalPrice = 0;
+const prefijo = "productoID";
 
-for (let productos of data){
-    generarProductos(productos)
+class ProductsByCar{
+    constructor(product){
+        this.idCar = product.id;
+        this.name = product.name;
+        this.price = parseFloat(product.price);
+    }   
 }
 
-function generarProductos(productos){
+function priceSummary(price){    
+    totalPrice = parseFloat(totalPrice) + parseFloat(price)
+    return totalPrice;
+}
+
+function priceRest(price){    
+    totalPrice = parseFloat(totalPrice) - parseFloat(price)
+    return totalPrice;
+}
+
+for (let productos of data){
+    generateProducts(productos)
+}
+
+function generateProducts(productos){
+    let idRemove = prefijo+productos.id;
     let padres = document.getElementsByClassName("options")
-    for (let padre of padres) {        
-        let contenedor       = document.createElement("div")
-        contenedor.innerHTML = ` <div class="options--products">
-                                <img src="${productos.img} " alt="${productos.img}">
-                                <div class="texts">
-                                    <p class="name"><strong>${productos.name}</strong> </p>
-                                    <p class="descript">${productos.descripcion} </p>
-                                    <a class="btn-buy" href="#"> ${productos.precio} </a>
-                                </div>
-                            </div> `
-        padre.appendChild(contenedor);
+    for (let padre of padres) {
+        let container       = document.createElement("div")
+        container.innerHTML = ` <div class="options--products">
+                                    <img src="${productos.img} " alt="${productos.img}">
+                                    <div class="texts">
+                                        <p class="name"><strong>${productos.name}</strong> </p>
+                                        <p class="descript">${productos.description} </p>
+                                        <button class="btn-buy" id=${productos.id}  href="#"> ${productos.price} </button>
+                                        <button class="btn-buy" id=${idRemove} href="#"> X </button>
+                                    </div>
+                                </div>`
+        padre.appendChild(container);
     }
-    
+    document.getElementById(productos.id).onclick = addCar;
+    document.getElementById(idRemove).onclick = deleteCar;
+}
+
+let items = document.getElementById("shopList");
+let iconShop = document.getElementById("shop");
+iconShop.addEventListener("click", showItemsCar);
+
+function showItemsCar(){
+    if (buyCar.length > 0){
+        buyCar.map((element) => {
+            let containerList       = document.createElement("div");
+            containerList.innerHTML = `<p>${element.name}</p>
+                                        <p>${element.price}</p>
+                                        <button href="#">X</button>` 
+            items.appendChild(containerList);
+        })  
+    } else {
+        let containerList       = document.createElement("div");
+            containerList.innerHTML = `<p>No hay elementos</p>` 
+            items.appendChild(containerList);
+    }
+}
+
+function addCar(event){
+    let index = parseInt(event.target.id) - 1
+    buyCar.push(new ProductsByCar(data[index]));
+    priceSummary(data[index].price);
+}
+
+function deleteCar(event){
+    let newId = event.target.id.substring(10,12);
+    let index = parseInt(newId) - 1
+    console.log(newId) 
+    buyCar.filter(data[index]);
+    console.log(buyCar);
+    priceRest(data[index].price);
+    console.log(totalPrice);
 }
 
 //Eventos de botón de compra
@@ -32,7 +91,7 @@ $(".btn-buy").click(() => {
     cantidadPedido = prompt(`No te arrepentirás \n¿qué cantidad desesas de este producto?`);
     $(".btn-buy").prepend(`<p>Quiero ${cantidadPedido}</p>`)
 })
-*/
+
 
 //Ensayando con Efectos y animaciones
 $("#burgerMissPiggy").click( () => { 
@@ -86,8 +145,7 @@ $("#btnPrueba").click(() => {
                                           
             }
         }
-    })
-    
+    })    
 })
 
 $("#btnEnviar").click(() => {
@@ -97,7 +155,7 @@ $("#btnEnviar").click(() => {
         }
     })
 })
-
+*/
 
 
 

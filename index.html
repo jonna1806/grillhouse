@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <title>Grill House</title>
     <link rel="icon" type="image/png" href="img/grillHouseWhite.png"> 
@@ -17,19 +20,38 @@
         <nav>
             <ul id="nav">
                 <li><a href="#">Inicio</a></li>
-                <li><a href="#burgers">Burgers</a></li>
-                <li><a href="#hotdogs">Hot dogs</a></li>
-                <li><a href="#pizzas">Pizzas</a></li>                
-                <li><a href="#papas">Papas</a></li>
-                <li><a href="#malteadas">Malteadas</a></li>             
+                <li><a href="#">Burgers</a></li>
+                <li><a href="#">Hot dogs</a></li>
+                <li><a href="#">Pizzas</a></li>                
+                <li><a href="#">Papas</a></li>
+                <li><a href="#">Malteadas</a></li>             
             </ul>
         </nav>
 
         <div class="icons">
             <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank"><i class="fas fa-shopping-cart" id="shop"></i></a>  
+            <a href="#" id="shop"><i class="fas fa-shopping-cart"  data-toggle="modal" data-target="#exampleModalCenter"></i></a>  
+        </div> 
+    
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <p class="modal-title" id="exampleModalLongTitle">Productos para ordenar</p>
+                </div>
+                <div class="modal-body" id="shopList">
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
         </div>
+        
         
     </header>
     <!--Section de prueba AJAX-->
@@ -37,295 +59,12 @@
 
     </section>
 
-    <!--WELCOME-->
-    <section class="welcome">
-        <div class="welcome--título">
-            <p>Bievenidos a</p>
-            <h1>Grill House</h1>
-            <p>Pásate y te antojas de algo</p>
-        </div>
-    </section>
-
-    <!--BURGERS-->
     <section class="container" id="burgers">
-        <div class="presentation">
-            <div class="presentation--main">
-                <video autoplay muted loop src="vid/burger.mp4"></video>
-            </div> 
-            <div class="presentation--texts"> 
-                <h2>Burgers</h2>
-                <p>Las favoritas de la casa, nosotros sabemos que al menos una se te antoja, pero si lo que quieres es conocer nuestra especialidad, dale una oportunidad a <strong>Miss Piggy</strong>  y no te arrepentirás de haberla conocido.</p>
-                <a id="burgerMissPiggy"  href="#">Esa Miss Piggy me merece...</a>
-            </div>
-        </div> 
         <div id="options" class="options">
-            <!--<div class="options--products">
-                <img src="img/burger_miss_piggy.jpeg" alt="Hamburguesa Miss Piggy">
-                <div class="texts">
-                    <p class="name"><strong>Miss Piggy</strong> </p>
-                    <p class="descript">Pan artesanal, vegetales frescos y 250 gr. de cerdo con tocineta y salsa de la casa.</p>
-                    <a  class="btn-buy" href="#">$ 27.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/burger_classic.jpeg" alt="Hamburguesa Classic">
-                <div class="texts">
-                    <p class="name"> <strong>Classic</strong> </p>
-                    <p class="descript">250 gr. de res, queso cheddar, tomate y lechuga fresca y aros de cebolla caramelizada.</p>
-                    <a class="btn-buy" href="#">$ 22.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/burger_bacon_king.jpeg" alt="Hamburguesa Bacon King">
-                <div class="texts">
-                    <p class="name"> <strong>Bacon King</strong> </p>
-                    <p class="descript">250 gr. de res con triple porción de tocineta, queso cheddar y salsa de la casa.</p>
-                    <a class="btn-buy" href="#">$ 25.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/burger_chesse_rain.jpeg" alt="Hamburguesa Chesse Rain">
-                <div class="texts">
-                    <p class="name"> <strong>Chesse Rain</strong> </p>
-                    <p class="descript">150gr. de cerdo, tocineta, tomate y triple porción de queso cheddar y mozzarella.</p>
-                    <a class="btn-buy" href="#">$ 24.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/burger_xxl.jpeg" alt="Hamburguesa XXL">
-                <div class="texts">
-                    <p class="name"> <strong>XXL</strong> </p>
-                    <p class="descript">150 gr. de res y 150 gr. de cerdo, aros de cebolla y quedo cheddar doble ración de tocineta.</p>
-                    <a class="btn-buy" href="#">$ 29.000</a>
-                </div>
-            </div>-->
+          
         </div>
     </section>
-
-    <!--HOTDOGS-->
-    <section class="container" id="hotdogs">
-        <div class="presentation">            
-            <div class="presentation--texts">
-                <h2>Hotdogs</h2>
-                <p>El peligro de comerte uno de nuestros hotdogs es que vas a queres más que eso, pero si lo que buscar es la experiencia completa, no te niegues a nuestro hotdodg <strong>Alemán</strong> , eso si, espero que tengas suficiente espacio.</p>
-                <a href="#">A ver, dame ese Alemán</a>
-            </div>
-            <div class="presentation--main">
-                <video autoplay muted loop src="vid/hotdog.mp4"></video>
-            </div>
-        </div>
-        <div class="options">
-            <div class="options--products">
-                <img src="img/hotdog_aleman.jpeg" alt="Hotdog Alemán">
-                <div class="texts">
-                    <p class="name"> <strong>Alemán</strong> </p>
-                    <p class="descript">Pan artesanal, salchicha alemana, queso cheddar, pesto y salsa tártara.</p>
-                    <a href="#">$ 25.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/hotdog_todero.jpg" alt="Hotdog Todero">
-                <div class="texts">
-                    <p class="name"> <strong>Todero</strong> </p>
-                    <p class="descript">Salchicha ranchera ahumada con trozos de tocineta, queso mozzarella y perejil.</p>
-                    <a href="#">$ 22.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/hotdog_casero.jpeg" alt="Hotdog Casero">
-                <div class="texts">
-                    <p class="name"> <strong>Casero</strong> </p>
-                    <p class="descript">Pan casero con salchicha ranchera, trozos de cebolla, ensalada y mostaza.</p>
-                    <a href="#">$ 20.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/hotdog_veggie.jpeg" alt="Hotdog Veggie">
-                <div class="texts">
-                    <p class="name"> <strong>Veggie</strong> </p>
-                    <p class="descript">Champiñones salteados, albahaca, ensalada, trozos de cebolla y mostaza.</p>
-                    <a href="#">$ 18.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/hotdog_sencillito.jpeg" alt="Hotdog Sencillo">
-                <div class="texts">
-                    <p class="name"> <strong>Sencillito</strong> </p>
-                    <p class="descript">Pan casero, salchicha, aros de cebolla salteados y salsa ketchup y mostaza.</p>
-                    <a href="#">$ 17.000</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--PIZZAS-->
-    <section class="container" id="pizzas">
-        <div class="presentation">
-            <div class="presentation--main">
-                <video autoplay muted loop src="vid/pizza.mp4"></video>
-            </div>
-            <div class="presentation--texts">
-                <h2>Pizzas</h2>
-                <p>Vas a creer que nuestras pizzas son solo por variar, pero si no te las vas a creer cuando pruebes la <strong>Consentida</strong>, una opción que te va deleitar no solo con su sabor, sino también por la frescura de sus ingredientes. </p>
-                <a href="#">Cómo decirle no a la Consentida</a>
-            </div>
-        </div>
-        <div class="options">
-            <div class="options--products">
-                <img src="img/pizza_consentida.jpeg" alt="Pizza Consentida">
-                <div class="texts"> 
-                    <p class="name"> <strong>Consentida</strong> </p>
-                    <p class="descript">Maza y bordes con queso, tomates cherry, albahaca cubierta de queso mozzarella.</p>
-                    <a href="#">$ 29.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/pizza_manzana.jpeg" alt="Pizza Manzana">
-                <div class="texts">
-                    <p class="name"> <strong>Manzana</strong> </p>
-                    <p class="descript">Crocante maza, jamón serrano, rúgula, trozos de manzana y queso mozzarella.</p>
-                    <a href="#">$ 22.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/pizza_pepperoni.jpeg" alt="Pizza Peperoni">
-                <div class="texts">
-                    <p class="name"> <strong>Pepperoni</strong> </p>
-                    <p class="descript">Maza con bordes de queso, aros de pepperoni, albahaca y queso cheddar.</p>
-                    <a href="#">$ 23.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/pizza_4quesos.jpeg" alt="Pizza 4 Quesos">
-                <div class="texts">
-                    <p class="name"> <strong>4 Quesos</strong> </p>
-                    <p class="descript">Salsa napolitana y encima queso tipo mozzarella, gorgonzola, fontina y parmesano.</p>
-                    <a href="#">$ 22.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/pizza_aceitunas.jpeg" alt="Pizza Aceituna">
-                <div class="texts">
-                    <p class="name"> <strong>Aceituna</strong> </p>
-                    <p class="descript">Maza con queso mozzarella y sobre una mezcla de aceitunas con tocineta y jamón.</p>
-                    <a href="#">$ 21.000</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--PAPAS-->
-    <section class="container" id="papas">
-        <div class="presentation">            
-            <div class="presentation--texts">
-                <h2>Papas</h2>
-                <p>Si nunca has tenido la oportunidad de probar unas papas con una exquicito sabor y una crocancia sin igual, llegaste donde es, pero acá entre nosotros, las <strong>California</strong> son las favoritas de la casa, pruébalas y dime si no es verdad.</p>
-                <a href="#">Esas California se ven muy buenas</a>
-            </div>
-            <div class="presentation--main">
-                <video autoplay muted loop src="vid/fries.mp4"></video>
-            </div>
-        </div>
-        <div class="options">
-            <div class="options--products">
-                <img src="img/fries_california.jpeg" alt="papas California">
-                <div class="texts">
-                    <p class="name"><strong>California</strong></p>
-                    <p class="descript">Nuestra más tradicional receta, con salsa de la casa y un toque de perejil.</p>
-                    <a href="#">$ 20.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/fries_paisa.jpeg" alt="papas 2">
-                <div class="texts">
-                    <p class="name"><strong>Paisa</strong></p>
-                    <p class="descript">Papas en fósforos con tiras de carne y trozos de salchicha en salsa chipotle</p>
-                    <a href="#">$ 21.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/fries_mexicana.jpeg" alt="papas 3">
-                <div class="texts">
-                    <p class="name"><strong>Mexicanas</strong></p>
-                    <p class="descript">Crocantes papas rociadas con chile en polvo y salsa de la casa con un toque de ají.</p>
-                    <a href="#">$ 18.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/fries_tradicionales.jpeg" alt="papas 4">
-                <div class="texts">
-                    <p class="name"><strong>Tradicionales</strong></p>
-                    <p class="descript">Papa criolla, bañadas en nuestra fórmula secreta de especias, no te arrepentirás.</p>
-                    <a href="#">$ 17.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/fries_pacono.jpeg" alt="papas 5">
-                <div class="texts">
-                    <p class="name"><strong>Pacono</strong></p>
-                    <p class="descript">Papas en fosforitos con queso crema y chicharrón, justo para calmar el antojo.</p>
-                    <a href="#">$ 17.000</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--MALTEADAS-->
-    <section class="container" id="malteadas">
-        <div class="presentation">
-            <div class="presentation--main">
-                <video autoplay muted loop src="vid/milkshake.mp4"></video>
-            </div>
-            <div class="presentation--texts">
-                <h2>Malteadas</h2>
-                <p>Entre tanta preparaciones que ofrecemos, por supuesto que también sacamos un espacios para estas deliciosas bebidas con las cuales podrás acompañar tus comidas, aunque con la <strong>Afrodita</strong> sentirás no te hace falta nada más.</p>
-                <a href="#">Afrodita...esa es la que quiero</a>
-            </div>
-        </div>
-        <div class="options">
-            <div class="options--products">
-                <img src="img/milkshake_afrodita.jpeg" alt="malteada 1">
-                <div class="texts">
-                    <p class="name"><strong>Afrodita</strong></p>
-                    <p class="descript">Deliciosa mezcla de frutos rojos, chantilly y trozos de frezas picadas.</p>
-                    <a href="#">$ 15.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/milkshake_blueberry.jpeg" alt="malteada 2">
-                <div class="texts">
-                    <p class="name"><strong>Blueberry</strong></p>
-                    <p class="descript">Arándanos en pequeños trozos, mortiño fresco y helado de veteado de mora.</p>
-                    <a href="#">$ 14.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/milkshake_mocaccino.jpeg" alt="malteada 3">
-                <div class="texts">
-                    <p class="name"><strong>Mocaccino</strong></p>
-                    <p class="descript">Exquisito café con un toque de Baileys, chantilly y mocaccino espolvoreado.</p>
-                    <a href="#">$ 13.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/milkshake_cereza.jpeg" alt="malteada 4">
-                <div class="texts">
-                    <p class="name"><strong>Cereza</strong></p>
-                    <p class="descript">Helado de vainilla con jugosas cerezas y trozos de mora picadas, todo un delite.</p>
-                    <a href="#">$ 14.000</a>
-                </div>
-            </div>
-            <div class="options--products">
-                <img src="img/milkshake_caramelo.jpeg" alt="malteada 5">
-                <div class="texts">
-                    <p class="name"><strong>Caramelo</strong></p>
-                    <p class="descript">Delicioso helado de veteado de caramelo, chantilly y trozos de caramelo picados.</p>
-                    <a href="#">$ 11.000</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+  
     <footer class="footer">
         <p>&copy;Todos los derechos reservados</p>
         <div class="icons">
@@ -333,6 +72,10 @@
             <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>  
         </div>
     </footer>
+
+    <!--Bootstrap y Pooper-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity=" ha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
     <!--JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js" integrity="sha512-UwcC/iaz5ziHX7V6LjSKaXgCuRRqbTp1QHpbOJ4l1nw2/boCfZ2KlFIqBUA/uRVF0onbREnY9do8rM/uT/ilqw==" crossorigin="anonymous"></script>
