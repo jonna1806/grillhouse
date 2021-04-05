@@ -2,11 +2,11 @@
 const buyCar = [];
 const data = productosData;
 let totalPrice = 0;
-const prefijo = "productoID";
+const prefijoRemove = "productoID";
 
 class ProductsByCar{
     constructor(product){
-        this.idCar = product.id;
+        this.id = product.id;
         this.name = product.name;
         this.price = parseFloat(product.price);
     }   
@@ -18,69 +18,102 @@ function priceSummary(price){
 }
 
 function priceRest(price){    
+    console.log("Soy resta",price);
     totalPrice = parseFloat(totalPrice) - parseFloat(price)
     return totalPrice;
 }
 
+//Se recorre el Array de productos
 for (let productos of data){
     generateProducts(productos)
 }
 
+//Generar productos al sitio web
 function generateProducts(productos){
-    let idRemove = prefijo+productos.id;
-    let padres = document.getElementsByClassName("options")
+    let padres = document.getElementsByClassName("products")
     for (let padre of padres) {
         let container       = document.createElement("div")
-        container.innerHTML = ` <div class="options--products">
-                                    <img src="${productos.img} " alt="${productos.img}">
-                                    <div class="texts">
+        container.innerHTML = ` <div class="product--option">
+                                    <img src=${productos.img} alt=${productos.img}>
+                                    <div class="product--option--details">
                                         <p class="name"><strong>${productos.name}</strong> </p>
                                         <p class="descript">${productos.description} </p>
-                                        <button class="btn-buy" id=${productos.id}  href="#"> ${productos.price} </button>
-                                        <button class="btn-buy" id=${idRemove} href="#"> X </button>
+                                        <button class="btn-buy" id=${productos.id}  href="#"> ${productos.price} </button>                                        
                                     </div>
                                 </div>`
         padre.appendChild(container);
     }
     document.getElementById(productos.id).onclick = addCar;
-    document.getElementById(idRemove).onclick = deleteCar;
+
+    //Efecto bontón AGREGAR
+    $(".btn-buy").mouseover(function() { 
+        $(this).text("Agregar")
+    });
+
+    $(".btn-buy").mouseout( function() { 
+        $(this).text(`${productos.price}`)
+    });
 }
 
 let items = document.getElementById("shopList");
 let iconShop = document.getElementById("shop");
 iconShop.addEventListener("click", showItemsCar);
 
+//Mostrar productos al carrito de compra
 function showItemsCar(){
-    if (buyCar.length > 0){
+    console.log("buy car", buyCar);
+    items.innerHTML = "";
+    if (buyCar.length > 0){        
         buyCar.map((element) => {
             let containerList       = document.createElement("div");
             containerList.innerHTML = `<p>${element.name}</p>
-                                        <p>${element.price}</p>
-                                        <button href="#">X</button>` 
+                                        <p>$ ${element.price}</p>
+                                        <button id=${element.id} class="btn btn-danger" href="#">X</button>` 
             items.appendChild(containerList);
-        })  
+            document.getElementById(element.id).onclick = deleteCar;
+        }) 
     } else {
-        let containerList       = document.createElement("div");
-            containerList.innerHTML = `<p>No hay elementos</p>` 
+        let containerList           = document.createElement("div");
+            containerList.innerHTML = `<p>No hay elementos aún</p>` 
             items.appendChild(containerList);
     }
 }
 
+//Añadir productos al carrito de compra
 function addCar(event){
     let index = parseInt(event.target.id) - 1
     buyCar.push(new ProductsByCar(data[index]));
     priceSummary(data[index].price);
+    console.log(totalPrice)
 }
 
 function deleteCar(event){
-    let newId = event.target.id.substring(10,12);
-    let index = parseInt(newId) - 1
-    console.log(newId) 
-    buyCar.filter(data[index]);
-    console.log(buyCar);
-    priceRest(data[index].price);
-    console.log(totalPrice);
+    for( let nuevoBuyCar in buyCar){
+        
+        let indice = buyCar[nuevoBuyCar].id;
+        if (indice == event.target.id){
+            console.log("Soy indice", indice)
+            let index = nuevoBuyCar;
+            console.log("Soy index", index);
+            console.log("Soy total price antes de", totalPrice);
+            priceRest(buyCar[index].price)
+            buyCar.splice(index, 1);
+            console.log("Soy total price después de", totalPrice);
+        }
+    }
+    showItemsCar()
 }
+
+/*
+var btnAll = document.getElementById("all").onclick = filterAll
+var btnAll = document.getElementById("burgers").onclick = filterBurgers
+var btnAll = document.getElementById("hotDog").onclick = filterHotDog
+var btnAll = document.getElementById("pizzas").onclick = filterHotDog
+var btnAll = document.getElementById("fries").onclick = filterFries
+var btnAll = document.getElementById("milkshakes").onclick = filterMilkshakes
+*/
+
+
 
 //Eventos de botón de compra
 var cantidadPedido = 0;
@@ -115,7 +148,6 @@ const guardarProductos = (a, b) => {localStorage.setItem(a, b)};
 for (const productos of data){
     guardarProductos("listaProductos", JSON.stringify(data));
 }
-
 
 //__________________________
 

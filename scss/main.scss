@@ -3,7 +3,12 @@
 
 ///HEADER
 
+.modal-backdrop{
+    display: none;
+}
+
 header{
+    position: fixed;
     width: 100%;
     background-color: $color-azul;
     display: flex;
@@ -44,6 +49,8 @@ header{
         }
     }
 
+    
+
     .icons{        
         
         display: flex;
@@ -72,6 +79,35 @@ header{
 
     #exampleModalLongTitle{
         font-size: 20px;
+        font-weight: 700;
+        align-content: center;
+    }
+
+    #shopList{
+        display: flex;
+        flex-direction: column;
+
+        div{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 10px 0;
+            border-bottom: 1px solid #dee2e6;
+
+            &:last-child{
+                border-bottom: 0;
+            }
+
+            p{
+                margin: 0 35px;
+            }
+
+            button{
+                margin: 0 35px ;
+            }
+            
+        }
     }
 }
 
@@ -82,7 +118,6 @@ header{
         background-position: center;
         width: 100%;
         height: auto;
-        filter: brightness(0.4);
 
     .welcome--título{
         display: flex;
@@ -107,7 +142,7 @@ header{
 
 .container{  
 
-    .options{     
+    .products{     
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -117,16 +152,16 @@ header{
             padding: 10px;
             width: 20%;
 
-            .options--products{
+            .product--option{
                 background-color: $color-blanco;
                 width: 100%;
     
                 img{
                     border-radius: 50%;
-                   width: 100%;
+                    width: 100%;
                 }
     
-                .texts{
+                .product--option--details{
                     width: 100%;
                     margin: 20px 0;
                     display: flex;
@@ -168,9 +203,7 @@ header{
                 }            
             }        
         }
-        }
-
-        
+    }        
 }
 
 footer{
@@ -201,8 +234,6 @@ footer{
             }
         }
 
-    }
-
-    
+    }    
     
 }
